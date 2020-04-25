@@ -12,7 +12,8 @@
     "disqus-react": "^1.0.8",
     "next": "9.3.5",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "sitemap": "^6.1.2"
   },
   "devDependencies": {
     "gray-matter": "^4.0.2",

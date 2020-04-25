@@ -1,0 +1,6 @@
+Sitemap: https://learningjs.dev/api/sitemap.xml
+
+User-agent: *
+Allow: /*
+
+Disallow: /api/*

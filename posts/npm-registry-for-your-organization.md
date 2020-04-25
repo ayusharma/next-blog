@@ -1,6 +1,7 @@
 ---
 title: 'npm registry for your organization'
 date: '2019-03-27T22:40:32.169Z'
+lastModified: '2019-03-27T22:40:32.169Z'
 ---
 
 ![alt](/nodejs-npm-registry.png)
