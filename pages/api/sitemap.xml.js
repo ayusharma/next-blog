@@ -43,6 +43,7 @@ export default (req, res) => {
             throw e;
         });
     } catch (e) {
+        console.error(e);
         res.status(500).end();
     }
 };
