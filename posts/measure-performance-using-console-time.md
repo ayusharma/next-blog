@@ -1,7 +1,7 @@
 ---
 title: Measure performance using console.time
 date: "2019-04-10T22:40:32.169Z"
-lastModified: '2019-04-10T22:40:32.169Z'
+lastModified: "2019-04-10T22:40:32.169Z"
 ---
 
 We write several implementations of a computer program, but sometimes confuse about performance and which one to choose. 
