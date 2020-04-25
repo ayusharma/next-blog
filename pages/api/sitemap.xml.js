@@ -1,8 +1,13 @@
 import { SitemapStream, streamToPromise, EnumChangefreq } from 'sitemap';
 import { createGzip } from 'zlib';
-import { getSortedPostsData } from '../../lib/posts';
+import fetch from 'node-fetch';
 
-export default (req, res) => {
+const postsURL =
+    process.env.NODE_ENV === 'development'
+        ? 'http://localhost:3000'
+        : 'https://learningjs.dev';
+
+export default async (req, res) => {
     if (!res) return {};
     try {
         // Set response header
@@ -24,9 +29,9 @@ export default (req, res) => {
         });
 
         // E.g. we create a sitemap.xml for articles
-        // Set articles change frequencey is weekly
-        const articles = getSortedPostsData();
-        articles.map((article) => {
+        // Set articles change frequency is weekly
+        const articles = await fetchPosts();
+        articles.posts.map((article) => {
             smStream.write({
                 url: `/posts/${article.id}`,
                 lastmod: article.lastModified,
@@ -47,3 +52,16 @@ export default (req, res) => {
         res.status(500).end();
     }
 };
+
+async function fetchPosts() {
+    try {
+        const response = await fetch(`${postsURL}/posts.json`);
+        const posts = await response.json();
+        if (response.ok) {
+            return posts;
+        }
+        return [];
+    } catch (e) {
+        console.error('Unable to fetch posts', e);
+    }
+}
