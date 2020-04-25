@@ -2,12 +2,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from './layout.module.css';
 
-const name = 'Your Name';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = 'Learning JS';
 
 export default function Layout({ children, home }) {
     return (
-        <div className="container mx-auto mt-8 font-serif">
+        <div className="container mx-auto mt-8 font-serif pr-6 pl-6">
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="description" content="Learning JS" />
@@ -26,12 +25,6 @@ export default function Layout({ children, home }) {
                     }}
                 />
             </Head>
-            {home && (
-                <header className={styles.header}>
-                    <h1 className="text-5xl font-bold text-gray-900">Notes</h1>
-                </header>
-            )}
-            <main className="flex justify-center mt-16">{children}</main>
             {!home && (
                 <div className={styles.backToHome}>
                     <Link href="/">
@@ -39,6 +32,12 @@ export default function Layout({ children, home }) {
                     </Link>
                 </div>
             )}
+            {home && (
+                <header className={styles.header}>
+                    <h1 className="text-5xl font-bold text-gray-900">Notes</h1>
+                </header>
+            )}
+            <main className="flex justify-center mt-10">{children}</main>
         </div>
     );
 }

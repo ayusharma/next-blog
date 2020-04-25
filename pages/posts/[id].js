@@ -32,7 +32,7 @@ export default function Post({ postData }) {
                     />
                 </article>
             </Layout>
-            <div className="container mx-auto mt-8">
+            <div className="container mx-auto mt-8 pr-6 pl-6">
                 <DiscussionEmbed
                     shortname="ayusharma-github-io"
                     config={{

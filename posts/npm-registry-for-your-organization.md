@@ -115,4 +115,4 @@ uplinks:
 
 Now, You can start to manage your packages on your own server.
 
-For more, visit https://verdaccio.
+For more, visit https://verdaccio.org
