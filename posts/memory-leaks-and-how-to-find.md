@@ -8,7 +8,7 @@ The memory leaks are very hard to find in an application and they can be avoided
 
 In this article, I'll try to cover the memory lifecycle pattern in applications, the most common causes of memory leaks and how you can identify them in Chrome Dev Tools.
 
-#### The Memory Lifecycle Patterns
+## The Memory Lifecycle Patterns
 
 The memory lifecycle pattern says that **some memory is allocated to your code**, **The allocated memory is being used by your code** and then **it is released (freed) when your code is executed**. 
 
@@ -16,7 +16,7 @@ The memory lifecycle pattern says that **some memory is allocated to your code**
 
 
 
-#### Causes of the Memory Leaks
+## Causes of the Memory Leaks
 
 **1. The Accidental Global** in `non-strict` mode
 
@@ -32,7 +32,6 @@ Here, you are assigning a value to `temp` variable which is not available in any
 **2. The Forgotten Timers**
 
 ```javascript
-
 setTimeout(() => {
   /** Perform a task here.. */
 }, 1000);
@@ -49,7 +48,6 @@ The *timers* allocates dynamic memory to perform the task and if you forget to c
 You can clear the `setTimeout` using `clearTimeout` and `setInterval` using `clearInterval`
 
 ```javascript
-
 var a = setTimeout(() => {
   /** Perform a task here.. */
 }, 1000);
@@ -57,7 +55,6 @@ var a = setTimeout(() => {
 clearTimeout(a);
 
 // OR
-
 var b = setInterval(() => {
   /** Perform a task here.. */
 }, 1000);
@@ -70,7 +67,6 @@ clearInterval(b);
 Just imagine, you have two buttons and when you click on *buttonOne* then it will remove the *buttonTwo* from the DOM. 
 
 ```javascript
-
 const buttonOne = document.querySelector('#button-a');
 const buttonTwo = document.querySelector('#button-b');
 
@@ -90,23 +86,19 @@ buttonOne.addEventListener('click', () => {
     const buttonTwo = document.querySelector('#button-b');
     document.body.removeChild(buttonTwo);
 });
-
 ```
 
 Here, We remove the `buttonTwo` from the *DOM* by clicking on `buttonOne` and it is *Garbage collected*.
 
 
-#### Identification in Chrome Dev Tools
+## Identification in Chrome Dev Tools
 
 - Open Chrome dev tools.
 - Load your website.
-- Select **Memory** checkbox in the performance panel and the click on **Reload** icon.
-
-![Alt Text](/m5d8o6wa9e623tjxo9x1.png)
+- Select **Memory** checkbox in the performance panel and the click on **Reload** icon. ![Alt Text](/m5d8o6wa9e623tjxo9x1.png)
 - Load the profile and memory graphs.
 
-
-#### Analysing the Memory Graphs
+## Analysing the Memory Graphs
 
 **Image A**
 ![Alt Text](/li94mzf1kqifok9r485y.png)
@@ -135,7 +127,7 @@ I hope you enjoy reading this article. Happy learning.
 
 
 
-#### References:
+## References:
 
 1. [Garbage collection in Javascript](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Internals/Garbage_collection)
 2. [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) and [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
