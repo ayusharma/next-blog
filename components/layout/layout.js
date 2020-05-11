@@ -13,6 +13,10 @@ export default function Layout({ children, home }) {
                 <meta property="og:image" content="" />
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
                 <script
                     async
                     src="https://www.googletagmanager.com/gtag/js?id=UA-55642689-2"
