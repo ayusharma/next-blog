@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 .markdown-content {
-    @apply tracking-normal text-xl text-gray-800 antialiased break-words;
+    @apply tracking-normal text-xl text-black antialiased break-words;
 }
 
 .markdown-content ul {
@@ -37,7 +37,7 @@
 }
 
 .markdown-content pre {
-    @apply bg-gray-200 p-5 text-base;
+    @apply p-12;
 }
 
 .markdown-content p code {

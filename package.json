@@ -22,11 +22,10 @@
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.5",
     "gray-matter": "^4.0.2",
+    "highlight.js": "^10.0.3",
+    "markdown-it": "^10.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "2.0.5",
-    "remark": "^12.0.0",
-    "remark-html": "^11.0.1",
-    "remark-parse": "^8.0.2",
     "tailwindcss": "^1.3.5"
   }
 }
