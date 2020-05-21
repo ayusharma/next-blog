@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from './layout.module.css';
 
 export const siteTitle = 'Learning JS';
 
 export default function Layout({ children, home }) {
     return (
-        <div className="container mx-auto mt-8 font-serif pr-6 pl-6">
+        <div className="container mx-auto mt-8 font-serif pr-6 pl-6 max-w-screen-md">
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="description" content="Learning JS" />
@@ -30,14 +29,12 @@ export default function Layout({ children, home }) {
                 />
             </Head>
             {!home && (
-                <div className={styles.backToHome}>
-                    <Link href="/">
-                        <a>← Back to home</a>
-                    </Link>
-                </div>
+                <Link href="/">
+                    <a>← Back to home</a>
+                </Link>
             )}
             {home && (
-                <header className={styles.header}>
+                <header className="flex justify-center">
                     <h1 className="text-5xl font-bold text-gray-900">Notes</h1>
                 </header>
             )}
